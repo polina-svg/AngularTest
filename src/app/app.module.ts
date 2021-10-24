@@ -10,7 +10,6 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatIconModule} from "@angular/material/icon";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
-import {AngularMaterialModule} from "./angular-material/angular-material.module";
 import {MatInputModule} from "@angular/material/input";
 import { NotFoundComponent } from './common/not-found/not-found.component';
 
@@ -25,7 +24,6 @@ import { NotFoundComponent } from './common/not-found/not-found.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AngularMaterialModule,
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
