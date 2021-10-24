@@ -1,0 +1,39 @@
+<div class=form_container [formGroup]="signUpForm">
+  <mat-form-field appearance="fill">
+    <mat-label>name</mat-label>
+    <input matInput formControlName="name" required >
+    <mat-icon matSuffix>man</mat-icon>
+    <!--      <mat-hint>Include area code</mat-hint>-->
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>user name</mat-label>
+    <input matInput formControlName="userName" required >
+    <mat-icon matSuffix>man</mat-icon>
+    <mat-hint></mat-hint>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>login</mat-label>
+    <input matInput formControlName="login" required >
+    <mat-icon matSuffix>man</mat-icon>
+    <mat-hint></mat-hint>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>password</mat-label>
+    <input matInput formControlName="password" required >
+    <mat-icon matSuffix>vpn_key</mat-icon>
+    <mat-hint></mat-hint>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>password</mat-label>
+    <input matInput formControlName="confirmPassword" required >
+    <mat-icon matSuffix>vpn_key</mat-icon>
+    <mat-hint></mat-hint>
+  </mat-form-field>
+
+
+  <button mat-raised-button color="primary" (click)="postForm()"> {{'login' | titlecase}}</button>
+</div>
