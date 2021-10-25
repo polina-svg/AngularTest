@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "login": "shibanov",
+      "password": 1234,
+      "info": {
+        "name": "Polina",
+        "email": "pshibanova00@gmail.com",
+        "age": 20,
+        "studyplace": [
+          "mslu",
+          "bsu"
+        ]
+      }
+    },
+  ]
+}

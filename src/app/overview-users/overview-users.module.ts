@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { OverviewUsersComponent } from './overview-users.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    OverviewUsersComponent
+  ],
   imports: [
     CommonModule
   ]

@@ -18,6 +18,11 @@ const routes: Routes = [
         children: [
           {
             path: '',
+            redirectTo: 'users-list',
+            pathMatch: 'full'
+          },
+          {
+            path: 'users-list',
             loadChildren: (): Promise<any> => import('./user-list/user-list.module').then((modules) => modules.UserListModule),
           }
         ]

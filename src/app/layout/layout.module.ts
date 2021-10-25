@@ -6,8 +6,9 @@ import { MainComponent } from './components/main/main.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {RouterModule} from "@angular/router";
 import {MatSidenavModule} from "@angular/material/sidenav";
-import {AngularMaterialModule} from "../angular-material/angular-material.module";
 import { ContentWithNavigationComponent } from './components/content-with-navigation/content-with-navigation.component';
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
 
 
 
@@ -23,7 +24,8 @@ import { ContentWithNavigationComponent } from './components/content-with-naviga
     CommonModule,
     RouterModule,
     MatSidenavModule,
-    AngularMaterialModule
+    MatButtonModule,
+    MatIconModule,
   ]
 })
 export class LayoutModule { }

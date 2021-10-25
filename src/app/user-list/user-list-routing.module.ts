@@ -4,12 +4,8 @@ import {UserListComponent} from "./user-list.component";
 
 const routes: Routes = [
   {
-    path: '', redirectTo: 'user-list', pathMatch: 'full'
+    path: '', component: UserListComponent
   },
-  {
-    path: 'user-list',
-    component: UserListComponent
-  }
 ];
 
 @NgModule({

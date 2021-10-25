@@ -1,1 +1,7 @@
-<p>user-list works!</p>
+<ul>
+  <li *ngFor="let user of userList | async">
+    <span>{{user?.login}}</span>
+    <span>{{user?.id}}</span>
+    <span>{{user?.info?.name}}</span>
+  </li>
+</ul>

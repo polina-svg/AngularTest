@@ -1,5 +1,5 @@
 
-
+<div class="wrapper">
   <div class=form_container [formGroup]="form">
     <mat-form-field appearance="fill">
       <mat-label>login</mat-label>
@@ -13,8 +13,12 @@
       <mat-icon matSuffix>vpn_key</mat-icon>
       <mat-hint></mat-hint>
     </mat-form-field>
-
-
-    <button mat-raised-button color="primary" (click)="login()"> {{'login' | titlecase}}</button>
+    <button mat-raised-button color="primary" (click)="login()"> {{'sign in' | titlecase}}</button>
+    <p>
+      New to our web?
+    </p>
+    <a routerLink="/sign-up" routerLinkActive="active">sign up</a>
   </div>
+
+</div>
 

@@ -12,6 +12,8 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
 import { NotFoundComponent } from './common/not-found/not-found.component';
+import {HttpClientModule} from "@angular/common/http";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { NotFoundComponent } from './common/not-found/not-found.component';
     MatInputModule,
     MatIconModule,
     ReactiveFormsModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,10 +1,5 @@
 <div class=form_container [formGroup]="signUpForm">
-  <mat-form-field appearance="fill">
-    <mat-label>name</mat-label>
-    <input matInput formControlName="name" required >
-    <mat-icon matSuffix>man</mat-icon>
-    <!--      <mat-hint>Include area code</mat-hint>-->
-  </mat-form-field>
+
 
   <mat-form-field appearance="fill">
     <mat-label>user name</mat-label>
@@ -35,5 +30,15 @@
   </mat-form-field>
 
 
-  <button mat-raised-button color="primary" (click)="postForm()"> {{'login' | titlecase}}</button>
+  <button mat-raised-button color="primary" (click)="postForm()"> {{'sign up' | titlecase}}</button>
+  <p>already have an acc?</p>
+  <a routerLink="/sign-in" routerLinkActive="active">sign in</a>
+
+  <mat-form-field appearance="fill" class="select">
+    <mat-label>sign up as</mat-label>
+    <mat-select>
+      <mat-option value="option1">admin</mat-option>
+      <mat-option value="option2">user</mat-option>
+    </mat-select>
+  </mat-form-field>
 </div>
