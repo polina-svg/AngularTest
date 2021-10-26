@@ -1,0 +1,10 @@
+{
+  "SIGN-IN": {
+    "LOGIN": "connexion",
+    "PASSWORD": "le mot de passe",
+    "SIGN-IN": "s'identifier",
+    "TITLE": "nouveau sur notre site?",
+    "SIGN-UP": "S'inscrire"
+
+  }
+}

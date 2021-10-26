@@ -2,7 +2,7 @@
 <div class="wrapper">
   <div class=form_container [formGroup]="form">
     <mat-form-field appearance="fill">
-      <mat-label>login</mat-label>
+      <mat-label>{{ 'SIGN-IN.LOGIN' | translate }}</mat-label>
       <input matInput formControlName="login" required >
       <mat-icon matSuffix>man</mat-icon>
     </mat-form-field>

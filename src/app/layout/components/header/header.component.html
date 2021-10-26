@@ -9,4 +9,9 @@
 <!--  </a>-->
 <!--</div>-->
 
+
+<h2>choose your language</h2>
+<select #langSelect (change)="translate.use(langSelect.value)">
+  <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+</select>
 <mat-icon class="language-icon">language</mat-icon>
