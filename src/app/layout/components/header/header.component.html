@@ -4,13 +4,13 @@
 <!--    </button>-->
 <!--  </a>-->
 <!--  <a routerLink="/sign-up" routerLinkActive="active">-->
-<!--    <button mat-raised-button color="primary"> {{'sign up' | titlecase}}-->
-<!--    </button>-->
+
 <!--  </a>-->
 <!--</div>-->
 
-
-<h2>choose your language</h2>
+<button *ngIf="isLogin" (click)="logout()" mat-raised-button color="primary"> {{'logout' | titlecase}}
+</button>
+<h4>{{ 'HEADER.TITLE' | translate }}</h4>
 <select #langSelect (change)="translate.use(langSelect.value)">
   <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
 </select>

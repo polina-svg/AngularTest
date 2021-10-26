@@ -6,9 +6,9 @@ import { MainComponent } from './components/main/main.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {RouterModule} from "@angular/router";
 import {MatSidenavModule} from "@angular/material/sidenav";
-import { ContentWithNavigationComponent } from './components/content-with-navigation/content-with-navigation.component';
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
+import {TranslateModule} from "@ngx-translate/core";
 
 
 
@@ -18,7 +18,6 @@ import {MatIconModule} from "@angular/material/icon";
     HeaderComponent,
     MainComponent,
     FooterComponent,
-    ContentWithNavigationComponent
   ],
   imports: [
     CommonModule,
@@ -26,6 +25,7 @@ import {MatIconModule} from "@angular/material/icon";
     MatSidenavModule,
     MatButtonModule,
     MatIconModule,
+    TranslateModule,
   ]
 })
 export class LayoutModule { }

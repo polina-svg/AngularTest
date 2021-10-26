@@ -1,0 +1,24 @@
+{
+"HEADER": {
+  "TITLE": "choose your language"
+},
+"SIGN-IN": {
+  "LOGIN": "login",
+  "PASSWORD": "password",
+  "SIGN-IN": "sign-in",
+  "TITLE": "new to our web?",
+  "SIGN-UP": "sign-up"
+},
+"SIGN-UP":{
+  "USER-NAME": "user name",
+  "LOGIN": "login",
+  "PASSWORD": "password",
+  "CONFIRM-PASSWORD": "confirm your password",
+  "SIGN-UP": "sign-up",
+  "TITLE": "already have an acc?",
+  "SIGN-IN": "sign-in",
+  "OPTION": "sign up as",
+  "OPTION-USER": "user",
+  "OPTION-ADMIN": "admin"
+}
+}

@@ -1,0 +1,25 @@
+{
+  "HEADER": {
+    "TITLE": "Choisissez votre langue"
+  },
+  "SIGN-IN": {
+    "LOGIN": "connexion",
+    "PASSWORD": "le mot de passe",
+    "SIGN-IN": "s'identifier",
+    "TITLE": "nouveau sur notre site?",
+    "SIGN-UP": "S'inscrire"
+
+  },
+  "SIGN-UP":{
+    "USER-NAME": "Nom d'utilisateur",
+    "LOGIN": "connexion",
+    "PASSWORD": "le mot de passe",
+    "CONFIRM-PASSWORD": "confirmer votre mot de passe",
+    "SIGN-UP": "S'inscrire",
+    "TITLE": "avez déjà un acc?",
+    "SIGN-IN": "s'identifier",
+    "OPTION": "inscrivez-vous en tant que",
+    "OPTION-USER": "utilisateur",
+    "OPTION-ADMIN": "administrateur"
+  }
+}

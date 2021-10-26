@@ -10,3 +10,13 @@ export interface UsersModel {
 }
 
 export type PostUser = Omit<UsersModel, "id">;
+
+
+export interface User {
+  username: string;
+  password: string;
+  id: number;
+  token: string;
+  firstName: string;
+  lastName: string;
+}

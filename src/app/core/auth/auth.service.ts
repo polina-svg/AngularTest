@@ -6,4 +6,10 @@ import { Injectable } from '@angular/core';
 export class AuthService {
 
   constructor() { }
+
+  // register(user: User) {
+  //   return this.http.post(`${this.authURL}/users/register`, user);
+  // }
+
+  // get
 }

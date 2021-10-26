@@ -8,16 +8,16 @@
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>password</mat-label>
+      <mat-label>{{ 'SIGN-IN.PASSWORD' | translate }}</mat-label>
       <input matInput formControlName="password" required >
       <mat-icon matSuffix>vpn_key</mat-icon>
       <mat-hint></mat-hint>
     </mat-form-field>
-    <button mat-raised-button color="primary" (click)="login()"> {{'sign in' | titlecase}}</button>
+    <button mat-raised-button color="primary" (click)="login()"> {{ 'SIGN-IN.SIGN-IN' | translate  | titlecase}}</button>
     <p>
-      New to our web?
+      {{ 'SIGN-IN.TITLE' | translate }}
     </p>
-    <a routerLink="/sign-up" routerLinkActive="active">sign up</a>
+    <a routerLink="/sign-up" routerLinkActive="active">{{ 'SIGN-IN.SIGN-UP' | translate }}</a>
   </div>
 
 </div>
