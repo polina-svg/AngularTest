@@ -9,7 +9,7 @@ import {LoginService} from "../services/login.service";
 })
 export class RoleGuard implements CanActivate {
   admin = 'admin';
-  adminGrandedRole = ['create-user', 'edit-user'];
+  adminGrantedRole = ['create-user', 'edit-user'];
 
   constructor(
     private router: Router,
@@ -23,7 +23,7 @@ export class RoleGuard implements CanActivate {
 
 
 
-    if(this.adminGrandedRole.includes('') && (currentUser as any).role === this.admin) {
+    if(this.adminGrantedRole.includes('') && (currentUser as any).role === this.admin) {
       return true
     }
     return true;
