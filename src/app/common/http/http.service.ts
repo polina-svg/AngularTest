@@ -11,32 +11,42 @@ export class HttpService {
   private url = 'http://localhost:3000';
   constructor(private http: HttpClient) {}
 
+
+  getUserPrivateList(): Observable<any>{
+    return this.http.get(`${this.url}/privateUserDataList`)
+  }
+
   getUserList(): Observable<any>{
-    return this.http.get(`${this.url}/users`)
+    return this.http.get(`${this.url}/generalInformation`)
   }
 
-  getUserById(id:string): Observable<any>{
-    return this.http.get(`${this.url}/users/${id}`)
+  getUserInfoById(id:string): Observable<any>{
+    return this.http.get(`${this.url}/generalInformation/?userId=${id}`)
   }
 
 
-  postUsers(user: PostUser) {
-    this.http.post(`${this.url}/users`, {
+  postUsers(user: PostUser): Observable<any> {
+    const id = UUID.UUID();
+    const regRequest = this.http.post(`${this.url}/privateUserDataList`, {
       ...user,
-      id: UUID.UUID()
+      id
     }, {
       headers: {
         'Content-Type': 'application/json'
       }
-    }).subscribe(data => console.log(data))
+    })
+    regRequest.subscribe(() => {
+
+    })
+    return regRequest
   }
 
 
   update(user: UsersModel) {
-    return this.http.put(`${this.url}}/users/${user.id}`, user);
+    return this.http.put(`${this.url}}/users/${user.userId}`, user);
   }
 
   delete(id: string) {
-    return this.http.delete(`${this.url}/users/${id}`);
+    return this.http.delete(`${this.url}/privateUserDataList/${id}`);
   }
 }
