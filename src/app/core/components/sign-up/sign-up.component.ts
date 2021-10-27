@@ -1,27 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterContentInit, AfterViewInit, Component, OnInit} from '@angular/core';
 import {FormBuilder} from "@angular/forms";
+import {AuthService} from "../../auth/auth.service";
 
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.scss']
 })
-export class SignUpComponent implements OnInit {
+export class SignUpComponent implements OnInit, AfterViewInit {
   public  signUpForm = this.fb.group({
     name: '',
-    userName: '',
     login: '',
     password: '',
-    confirmPassword: ''
+    confirmPassword: '',
+    role: ''
   });
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private authService: AuthService) { }
 
   ngOnInit(): void {
 
   }
 
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.signUpForm.controls['role'].setValue('user')
+    }, 0);
+
+  }
+
   postForm() {
-    console.log(this.signUpForm.value)
+    this.authService.register(this.signUpForm.value)
   }
 }

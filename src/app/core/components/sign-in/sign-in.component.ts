@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
-import {LoginService} from "../../services/login.service";
+import {AuthService} from "../../auth/auth.service";
 
 @Component({
   selector: 'app-sign-in',
@@ -10,7 +10,7 @@ import {LoginService} from "../../services/login.service";
 export class SignINComponent implements OnInit {
   form!: FormGroup;
 
-  constructor(private fb: FormBuilder, private loginSerice: LoginService) {
+  constructor(private fb: FormBuilder, private authService: AuthService) {
   }
 
   ngOnInit(): void {
@@ -21,6 +21,6 @@ export class SignINComponent implements OnInit {
   }
 
   login() {
-    this.loginSerice.login(this.form.value)
+    this.authService.login(this.form.value)
   }
 }

@@ -1,9 +1,7 @@
 <div class=form_container [formGroup]="signUpForm">
-
-
   <mat-form-field appearance="fill">
     <mat-label>{{ 'SIGN-UP.USER-NAME' | translate }}</mat-label>
-    <input matInput formControlName="userName" required >
+    <input matInput formControlName="name" required >
     <mat-icon matSuffix>man</mat-icon>
     <mat-hint></mat-hint>
   </mat-form-field>
@@ -30,15 +28,16 @@
   </mat-form-field>
 
 
+  <mat-form-field appearance="fill" class="select">
+    <mat-label>{{ 'SIGN-UP.OPTION' | translate }}</mat-label>
+    <mat-select formControlName="role">
+      <mat-option value="user">{{ 'SIGN-UP.OPTION-USER' | translate }}</mat-option>
+      <mat-option value="admin">{{ 'SIGN-UP.OPTION-ADMIN' | translate }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
   <button mat-raised-button color="primary" (click)="postForm()"> {{ 'SIGN-UP.SIGN-UP' | translate | titlecase}}</button>
   <p>{{ 'SIGN-UP.TITLE' | translate }}</p>
   <a routerLink="/sign-in" routerLinkActive="active">{{ 'SIGN-UP.SIGN-IN' | translate }}</a>
-
-  <mat-form-field appearance="fill" class="select">
-    <mat-label>{{ 'SIGN-UP.OPTION' | translate }}</mat-label>
-    <mat-select>
-      <mat-option value="option1">{{ 'SIGN-UP.OPTION-USER' | translate }}</mat-option>
-      <mat-option value="option2">{{ 'SIGN-UP.OPTION-ADMIN' | translate }}</mat-option>
-    </mat-select>
-  </mat-form-field>
 </div>
