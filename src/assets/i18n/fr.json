@@ -1,6 +1,7 @@
 {
   "HEADER": {
-    "TITLE": "Choisissez votre langue"
+    "TITLE": "Choisissez votre langue",
+    "SIGN-OUT": "Se déconnecter"
   },
   "SIGN-IN": {
     "LOGIN": "connexion",

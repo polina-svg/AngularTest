@@ -3,9 +3,10 @@ export interface UsersModel {
   login: string,
   password: string,
   info?: {
-    name: string,
+    firstName: string,
+    lastName: string,
     age: string,
-    studyplase: string[]
+    studyPlase: string[]
   }
 }
 

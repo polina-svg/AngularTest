@@ -1,12 +1,15 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
   name: 'shortName'
 })
 export class ShortNamePipe implements PipeTransform {
 
-  transform(firstName: string, lastName: string): string {
-    return `${firstName} ${lastName[0]}.`
+  transform(firstName: string | undefined, lastName: string | undefined): string {
+    if (typeof  lastName !== "undefined") {
+      return `${firstName} ${lastName[0]}.`
+    }
+    return 'undefined'
   }
 
 }

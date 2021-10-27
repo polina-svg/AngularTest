@@ -5,10 +5,71 @@
       "login": "shibanov",
       "password": "1234",
       "info": {
-        "name": "Polina",
+        "firstName": "Polina",
+        "lastName": "Shibanova",
         "email": "pshibanova00@gmail.com",
         "age": "20",
-        "studyplace": ["mslu", "bsu"]
+        "studyPlace": ["mslu", "bsu"]
+      }
+    },
+    {
+      "id": "1",
+      "login": "shibanov",
+      "password": "1234",
+      "info": {
+        "firstName": "Polina",
+        "lastName": "Shibanova",
+        "email": "pshibanova00@gmail.com",
+        "age": "20",
+        "studyPlace": ["mslu", "bsu"]
+      }
+    },
+    {
+      "id": "1",
+      "login": "shibanov",
+      "password": "1234",
+      "info": {
+        "firstName": "Polina",
+        "lastName": "Shibanova",
+        "email": "pshibanova00@gmail.com",
+        "age": "20",
+        "studyPlace": ["mslu", "bsu"]
+      }
+    },
+    {
+      "id": "1",
+      "login": "shibanov",
+      "password": "1234",
+      "info": {
+        "firstName": "Polina",
+        "lastName": "Shibanova",
+        "email": "pshibanova00@gmail.com",
+        "age": "20",
+        "studyPlace": ["mslu", "bsu"]
+      }
+    },
+    {
+      "id": "1",
+      "login": "shibanov",
+      "password": "1234",
+      "info": {
+        "firstName": "Polina",
+        "lastName": "Shibanova",
+        "email": "pshibanova00@gmail.com",
+        "age": "20",
+        "studyPlace": ["mslu", "bsu"]
+      }
+    },
+    {
+      "id": "1",
+      "login": "shibanov",
+      "password": "1234",
+      "info": {
+        "firstName": "Polina",
+        "lastName": "Shibanova",
+        "email": "pshibanova00@gmail.com",
+        "age": "20",
+        "studyPlace": ["mslu", "bsu"]
       }
     }
   ]

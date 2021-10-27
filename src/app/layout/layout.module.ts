@@ -9,6 +9,7 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {TranslateModule} from "@ngx-translate/core";
+import {MatOptionModule} from "@angular/material/core";
 
 
 
@@ -26,6 +27,7 @@ import {TranslateModule} from "@ngx-translate/core";
     MatButtonModule,
     MatIconModule,
     TranslateModule,
+    MatOptionModule,
   ]
 })
 export class LayoutModule { }

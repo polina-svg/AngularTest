@@ -8,10 +8,12 @@
 <!--  </a>-->
 <!--</div>-->
 
-<button *ngIf="isLogin" (click)="logout()" mat-raised-button color="primary"> {{'logout' | titlecase}}
+<button *ngIf="isLogin" (click)="logout()" mat-raised-button color="primary"> {{'HEADER.SIGN-OUT' | translate | titlecase}}
 </button>
-<h4>{{ 'HEADER.TITLE' | translate }}</h4>
-<select #langSelect (change)="translate.use(langSelect.value)">
+
+
+
+<select #langSelect (change)="translate.use(langSelect.value)" class="header__select">
   <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
 </select>
-<mat-icon class="language-icon">language</mat-icon>
+

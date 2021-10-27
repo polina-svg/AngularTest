@@ -1,6 +1,7 @@
 {
 "HEADER": {
-  "TITLE": "choose your language"
+  "TITLE": "choose your language",
+  "SIGN-OUT": "sign out"
 },
 "SIGN-IN": {
   "LOGIN": "login",

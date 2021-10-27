@@ -16,7 +16,6 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {MatSelectModule} from "@angular/material/select";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
-import { ShortNamePipe } from './shared/pipes/short-name.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +23,6 @@ import { ShortNamePipe } from './shared/pipes/short-name.pipe';
     SignINComponent,
     SignUpComponent,
     NotFoundComponent,
-    ShortNamePipe
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,6 @@
-<ul>
-  <li (click)="openProfile(user.id)" *ngFor="let user of userList | async">
-    <span>{{user?.login}}</span>
-    <span>{{user?.id}}</span>
-    <span>{{user?.info?.name}}</span>
-  </li>
-</ul>
+
+
+
+<mat-list role="list">
+  <app-user-list-item *ngFor="let user of userList | async" [item]="user" (click)="openProfile(user.id)"></app-user-list-item>
+</mat-list>
