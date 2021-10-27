@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Observable} from "rxjs";
 import {UsersModel} from "../../../shared/models/users.model";
 import {HttpService} from "../../../common/http/http.service";
@@ -12,12 +12,16 @@ import {Router} from "@angular/router";
 export class UserListItemComponent implements OnInit {
   public isAdmin = "admin";
   @Input() item: UsersModel | undefined;
+  @Output() isDelete: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private httpService: HttpService) { }
 
-  delete(id: string | undefined){
+  delete(event: Event, id: string | undefined){
+    event.stopPropagation();
     if(id) {
-      this.httpService.delete(id);
+      this.httpService.delete(id).subscribe(()=> {
+        this.isDelete.emit()
+      });
     }
     return
   }

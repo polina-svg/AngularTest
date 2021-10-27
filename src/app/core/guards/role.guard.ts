@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree} from '@angular/router';
 import { Observable } from 'rxjs';
-import {LoginService} from "../services/login.service";
+import {AuthService} from "../auth/auth.service";
 
 
 @Injectable({
@@ -13,7 +13,7 @@ export class RoleGuard implements CanActivate {
 
   constructor(
     private router: Router,
-    private loginService: LoginService
+    private loginService: AuthService
   ) {}
   canActivate(
     route: ActivatedRouteSnapshot,

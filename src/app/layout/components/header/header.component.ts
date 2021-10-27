@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
-import {LoginService} from "../../../core/services/login.service";
+import {AuthService} from "../../../core/auth/auth.service";
 
 @Component({
   selector: 'app-header',
@@ -10,7 +10,7 @@ import {LoginService} from "../../../core/services/login.service";
 export class HeaderComponent implements OnInit {
   public isLogin: boolean | undefined
 
-  constructor(public translate: TranslateService, private loginService: LoginService) {
+  constructor(public translate: TranslateService, private loginService: AuthService) {
     this.loginService.currentUser.subscribe((user) => {
       this.isLogin = !!user;
     });

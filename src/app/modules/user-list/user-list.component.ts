@@ -14,6 +14,11 @@ export class UserListComponent implements OnInit {
   constructor(private httpService: HttpService, private router: Router) { }
 
   ngOnInit(): void {
+    this.updateUserList()
+  }
+
+
+  updateUserList() {
     this.userList = this.httpService.getUserList();
   }
 
