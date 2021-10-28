@@ -32,15 +32,15 @@ export class HttpService {
     return this.http.post(`${this.url}/privateUserDataList`,user,this.header)
   }
 
+  putUserInfo(userInfo: any, id: string | undefined) {
+    return this.http.put(`${this.url}/generalInformation/${id}`, userInfo)
+  }
+
   updateGeneralInformation(information: any, id?: string): Observable<any> {
     if(id) {
       return this.http.put(`${this.url}/generalInformation/${information.id}`, information)
     }
     return this.http.post(`${this.url}/generalInformation/`, information, this.header)
-  }
-
-  update(user: UsersModel) {
-    return this.http.put(`${this.url}}/users/${user.id}`, user);
   }
 
   delete(id: string) {

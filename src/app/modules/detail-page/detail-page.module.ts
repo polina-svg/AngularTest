@@ -4,18 +4,20 @@ import { DetailPageComponent } from './detail-page.component';
 import {DetailPageRoutingModule} from "./detail-page-routing.module";
 import {ReactiveFormsModule} from "@angular/forms";
 import {TranslateModule} from "@ngx-translate/core";
+import {OnlineStatusDirective} from "./directives/online-status.directive";
 
 
 
 @NgModule({
   declarations: [
-    DetailPageComponent
+    DetailPageComponent,
+    OnlineStatusDirective
   ],
   imports: [
     CommonModule,
     DetailPageRoutingModule,
     ReactiveFormsModule,
-    TranslateModule
+    TranslateModule,
   ]
 })
 export class DetailPageModule { }

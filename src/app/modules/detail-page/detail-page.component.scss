@@ -1,6 +1,13 @@
 .userInfo{
   display: flex;
   flex-direction: column;
+  div{
+    .online {
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+    }
+  }
   .fields{
     display: flex;
     flex-direction: column;

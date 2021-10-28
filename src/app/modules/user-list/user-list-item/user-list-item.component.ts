@@ -3,6 +3,7 @@ import {Observable} from "rxjs";
 import {UsersModel} from "../../../shared/models/users.model";
 import {HttpService} from "../../../common/http/http.service";
 import {Router} from "@angular/router";
+import {AuthService} from "../../../core/auth/auth.service";
 
 @Component({
   selector: 'app-user-list-item',
@@ -10,11 +11,15 @@ import {Router} from "@angular/router";
   styleUrls: ['./user-list-item.component.scss']
 })
 export class UserListItemComponent implements OnInit {
-  public isAdmin = "admin";
+  public isAdmin: boolean;
   @Input() item: UsersModel | undefined;
   @Output() isDelete: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(private httpService: HttpService) { }
+  constructor(private httpService: HttpService,
+              private authService: AuthService) {
+    // @ts-ignore
+    this.isAdmin = this.authService.currentUserValue.role !== 'admin';
+  }
 
   delete(event: Event, id: string | undefined){
     event.stopPropagation();

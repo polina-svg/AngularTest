@@ -1,9 +1,15 @@
 {
   "privateUserDataList": [
     {
-      "login": "pshib",
-      "password": "123",
-      "role": "user",
+      "firstName": "polina",
+      "lastName": "shibanova",
+      "age": "20",
+      "photo": "",
+      "university": [
+        "mglu",
+        "msi",
+        "fit"
+      ],
       "id": "a5d1f031-b6e0-b434-5f1b-fd1994257513"
     },
     {
@@ -11,41 +17,25 @@
       "password": "12345",
       "role": "admin",
       "id": "07659ba4-0e18-c4de-afe7-bd1356b948f3"
-    },
-    {
-      "login": "1",
-      "password": "1",
-      "role": "user",
-      "id": "1cc1f940-fd17-b662-1e89-da2f315475e9"
     }
   ],
   "generalInformation": [
     {
-      "id": "a5d1f031-b6e0-b434-5f1b-fd1994257513",
-      "firstName": "polina",
+      "firstName": "polin",
       "lastName": "shibanova",
-      "age": "",
-      "online": false,
+      "age": "20",
       "photo": "",
+      "online": true,
       "university": [
         "mglu",
-        "msi",
-        "fit"
-      ]
+        "msi"
+      ],
+      "id": "a5d1f031-b6e0-b434-5f1b-fd1994257513"
     },
     {
       "id": "07659ba4-0e18-c4de-afe7-bd1356b948f3",
       "firstName": "Nikolay",
       "lastName": "Lozicki",
-      "age": "",
-      "online": false,
-      "photo": "",
-      "university": []
-    },
-    {
-      "id": "1cc1f940-fd17-b662-1e89-da2f315475e9",
-      "firstName": "asdfasdfa",
-      "lastName": "asfasdfasdf",
       "age": "",
       "online": false,
       "photo": "",

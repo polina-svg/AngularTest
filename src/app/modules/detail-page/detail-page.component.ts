@@ -2,9 +2,9 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {Subscription} from "rxjs";
 import {HttpService} from "../../common/http/http.service";
-import {UsersModel} from "../../shared/models/users.model";
-import {Form, FormArray, FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {FormArray, FormBuilder, FormControl} from "@angular/forms";
 import {AuthService} from "../../core/auth/auth.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-detail-page',
@@ -13,7 +13,8 @@ import {AuthService} from "../../core/auth/auth.service";
 })
 export class DetailPageComponent implements OnInit, OnDestroy {
   public id: string | undefined;
-  private routeSub: Subscription;
+  private routeSub = new Subscription();
+  public addControl = new FormControl('')
   public userInfo = this.fb.group({
     firstName: new FormControl(''),
     lastName: new FormControl(''),
@@ -22,19 +23,21 @@ export class DetailPageComponent implements OnInit, OnDestroy {
     university: new FormArray([]),
   });
   public isAdmin: boolean;
+  public online!: boolean;
 
   constructor(
     private router: ActivatedRoute,
     private http: HttpService,
     private fb: FormBuilder,
+    private toast: ToastrService,
     private authService: AuthService) {
     // @ts-ignore
     this.isAdmin = this.authService.currentUserValue.role !== 'admin';
-    console.log(this.isAdmin)
-    this.routeSub = this.router.params.subscribe(param => {
+    const subRoute = this.router.params.subscribe(param => {
       this.id = param['id'];
       this.createFormWitchUserInfo(param['id'])
     })
+    this.routeSub.add(subRoute)
   }
 
   ngOnInit(): void {
@@ -46,9 +49,12 @@ export class DetailPageComponent implements OnInit, OnDestroy {
   }
 
   createFormWitchUserInfo(id: string) {
-
-    this.http.getUserInfoById(id).subscribe((user) => {
+    const subUser = this.http.getUserInfoById(id).subscribe((user) => {
         Object.keys(user).forEach((key) => {
+          if (key === "online") {
+            this.online = user[key];
+            return;
+          }
           if (key === 'university') {
             user[key].forEach((item: string) => {
               (this.userInfo.controls[key] as FormArray).push(new FormControl(item))
@@ -58,7 +64,8 @@ export class DetailPageComponent implements OnInit, OnDestroy {
           this.userInfo.patchValue({[key]: user[key]})
         })
       }
-    )
+    );
+    this.routeSub.add(subUser)
   }
 
   ngOnDestroy() {
@@ -67,5 +74,16 @@ export class DetailPageComponent implements OnInit, OnDestroy {
 
   deleteUniversity(idx: number) {
     (this.userInfo.controls['university'] as FormArray).removeAt(idx)
+  }
+
+  addUniv() {
+    (this.userInfo.controls['university'] as FormArray).push(new FormControl(this.addControl.value))
+  }
+
+  postInfo() {
+    const subPost = this.http.putUserInfo(this.userInfo.value, this.id).subscribe(() => {
+      this.toast.success('Update complete')
+    })
+    this.routeSub.add(subPost)
   }
 }

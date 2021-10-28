@@ -1,5 +1,8 @@
 
 <div [formGroup]="userInfo" class="userInfo">
+  <div [ngStyle]="{display: 'flex'}">
+    <span>Status: </span> <div class="online" [appOnlineStatus]="online"></div>
+  </div>
 
   <div *ngIf="userInfo" class="fields">
     <label>
@@ -27,9 +30,13 @@
     <ul formArrayName="university">
       <li *ngFor="let user of formArr.controls; index as idx">
         <span>{{user.value}}</span>
-<!--        <input [formControlName]="idx" placeholder="Enter User Name">-->
         <button type="button" (click)="deleteUniversity(idx)" *ngIf="!isAdmin">Delete</button>
       </li>
     </ul>
+    <div *ngIf="!isAdmin">
+      <input  type="text" [formControl]="addControl">
+      <button type="button" (click)="addUniv()">add</button>
+    </div>
   </div>
+  <button type="button" (click)="postInfo()" *ngIf="!isAdmin">post info</button>
 </div>
