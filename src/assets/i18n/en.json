@@ -21,5 +21,18 @@
   "OPTION": "sign up as",
   "OPTION-USER": "user",
   "OPTION-ADMIN": "admin"
+},
+
+"USERS-LIST":{
+  "SEARCH": "search here",
+  "DELETE": "delete"
+},
+
+"USER-INFO":{
+  "FIRST-NAME": "first name:",
+  "LAST-NAME": "last name:",
+  "AGE": "age:",
+  "UNIVERSITY": "universities:"
+
 }
 }

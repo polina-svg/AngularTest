@@ -1,0 +1,35 @@
+
+<div [formGroup]="userInfo" class="userInfo">
+
+  <div *ngIf="userInfo" class="fields">
+    <label>
+      <span class="title">{{ 'USER-INFO.FIRST-NAME' | translate }}</span>
+      <span *ngIf="isAdmin; else elseFirstName">{{userInfo.controls.firstName.value}}</span>
+      <ng-template #elseFirstName>
+        <input type="text" formControlName="firstName">
+      </ng-template>
+    </label>
+    <label>
+      <span class="title">{{ 'USER-INFO.LAST-NAME' | translate }}</span>
+      <span *ngIf="isAdmin; else elseLastName">{{userInfo.controls.lastName.value}}</span>
+      <ng-template #elseLastName>
+      <input type="text" formControlName="lastName">
+      </ng-template>
+    </label>
+    <label>
+      <span class="title">{{ 'USER-INFO.AGE' | translate }}</span>
+      <span *ngIf="isAdmin; else elseAge">{{userInfo.controls.age.value || 'unknown'}}</span>
+      <ng-template #elseAge>
+      <input type="text" formControlName="age">
+      </ng-template>
+    </label>
+    <h4>{{ 'USER-INFO.UNIVERSITY' | translate }}</h4>
+    <ul formArrayName="university">
+      <li *ngFor="let user of formArr.controls; index as idx">
+        <span>{{user.value}}</span>
+<!--        <input [formControlName]="idx" placeholder="Enter User Name">-->
+        <button type="button" (click)="deleteUniversity(idx)" *ngIf="!isAdmin">Delete</button>
+      </li>
+    </ul>
+  </div>
+</div>

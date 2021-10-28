@@ -7,6 +7,10 @@ import {MatListModule} from "@angular/material/list";
 import {ShortNamePipe} from "../../shared/pipes/short-name.pipe";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {ReactiveFormsModule} from "@angular/forms";
+import {TranslateModule} from "@ngx-translate/core";
 
 
 
@@ -22,6 +26,10 @@ import {MatButtonModule} from "@angular/material/button";
     MatListModule,
     MatIconModule,
     MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    TranslateModule,
   ]
 })
 export class UserListModule { }

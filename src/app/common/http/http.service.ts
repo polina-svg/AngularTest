@@ -25,7 +25,7 @@ export class HttpService {
   }
 
   getUserInfoById(id: string): Observable<any> {
-    return this.http.get(`${this.url}/generalInformation/?userId=${id}`);
+    return this.http.get(`${this.url}/generalInformation/${id}`);
   }
 
   postUsers(user: PostUser): Observable<any> {

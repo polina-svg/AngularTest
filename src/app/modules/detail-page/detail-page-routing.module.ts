@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import {ActivatedRoute, Router, RouterModule, Routes} from '@angular/router';
 import {DetailPageComponent} from "./detail-page.component";
 
 
 const routes: Routes = [
   {
-    path: '', component: DetailPageComponent
+    path: ':id', component: DetailPageComponent, pathMatch: 'full'
   },
 ];
 

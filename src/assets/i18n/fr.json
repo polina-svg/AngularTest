@@ -22,5 +22,17 @@
     "OPTION": "inscrivez-vous en tant que",
     "OPTION-USER": "utilisateur",
     "OPTION-ADMIN": "administrateur"
+  },
+
+  "USERS-LIST":{
+  "SEARCH": "cherche ici",
+  "DELETE": "effacer"
+},
+  "USER-INFO":{
+    "FIRST-NAME": "nom",
+    "LAST-NAME": "nom de famille",
+    "AGE": "âge",
+    "UNIVERSITY": "les universités"
+
   }
 }
