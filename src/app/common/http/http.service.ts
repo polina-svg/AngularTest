@@ -44,6 +44,9 @@ export class HttpService {
   }
 
   delete(id: string) {
-    return this.http.delete(`${this.url}/privateUserDataList/${id}`);
+    return forkJoin({
+      deletePrivate:this.http.delete(`${this.url}/privateUserDataList/${id}`),
+      deleteGeneral: this.http.delete(`${this.url}/generalInformation/${id}`)
+    })
   }
 }
