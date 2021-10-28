@@ -11,11 +11,12 @@ export interface PrivateUserModel {
 }
 
 export interface registerFrom  {
-  "name": string,
-  "login": string,
-  "password": string,
-  "confirmPassword": string,
-  "role": Role,
+  firstName: string,
+  lastName: string
+  login: string,
+  password: string,
+  confirmPassword: string,
+  role: Role,
 }
 
 
@@ -39,7 +40,7 @@ export interface UsersModel {
   university: {name: string, region: string}[]
 }
 
-export type PostUser = Omit<registerFrom, 'confirmPassword'| 'name'>;
+export type PostUser = Omit<registerFrom, 'confirmPassword'| 'lastName' | 'firstName'> & {id: string} ;
 
 export type Role = 'user' | 'admin';
 

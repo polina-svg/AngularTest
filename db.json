@@ -1,4 +1,17 @@
 {
-  "privateUserDataList": [],
-  "generalInformation": [  ]
+  "privateUserDataList": [
+    {
+      "login": "soullnik",
+      "password": "12345",
+      "role": "user",
+      "id": "59b73220-2e6d-9e0e-627f-969cd2e49d1a"
+    }
+  ],
+  "generalInformation": [
+    {
+      "firstName": "soul",
+      "lastName": "nik",
+      "id": "59b73220-2e6d-9e0e-627f-969cd2e49d1a"
+    }
+  ]
 }

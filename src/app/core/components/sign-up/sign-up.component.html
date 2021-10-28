@@ -1,7 +1,14 @@
 <div class=form_container [formGroup]="signUpForm">
   <mat-form-field appearance="fill">
     <mat-label>{{ 'SIGN-UP.USER-NAME' | translate }}</mat-label>
-    <input matInput formControlName="name" required >
+    <input matInput formControlName="firstName" required >
+    <mat-icon matSuffix>man</mat-icon>
+    <mat-hint></mat-hint>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>{{ 'SIGN-UP.USER-NAME' | translate }}</mat-label>
+    <input matInput formControlName="lastName" required >
     <mat-icon matSuffix>man</mat-icon>
     <mat-hint></mat-hint>
   </mat-form-field>

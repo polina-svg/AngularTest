@@ -9,7 +9,8 @@ import {AuthService} from "../../auth/auth.service";
 })
 export class SignUpComponent implements OnInit, AfterViewInit {
   public  signUpForm = this.fb.group({
-    name: '',
+    firstName: '',
+    lastName: '',
     login: '',
     password: '',
     confirmPassword: '',

@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject, Observable, of} from "rxjs";
+import {BehaviorSubject, forkJoin, Observable, of} from "rxjs";
 import {Router} from "@angular/router";
 import {HttpService} from "../../common/http/http.service";
+import { UUID } from 'angular2-uuid';
 import {map} from "rxjs/operators";
 import {CurrentUser, registerFrom, UserConfirmedModel} from "../../shared/models/users.model";
 import {PrivateUserModel} from "../../shared/models/users.model";
@@ -56,13 +57,26 @@ export class AuthService {
   }
 
   register(user: registerFrom) {
-    this.http.postUsers({
+    const id = UUID.UUID();
+    const privateUserData = {
       login: user.login,
       password: user.password,
-      role: user.role
-    }).subscribe(() => {
-      this.router.navigate(['sign-in']).then();
+      role: user.role,
+      id
+    }
+    const defaultGeneralInfo = {
+      firstName: user.firstName,
+      lastName: user.lastName,
+      id
+    }
+    forkJoin({
+      postPrivate: this.http.postUsers(privateUserData),
+      postGeneral: this.http.updateGeneralInformation(defaultGeneralInfo)
+    }).subscribe((_) => {
+      //тут тоже вывести что тип успешно зарегат чекрез тостер
+      this.router.navigate(['']).then();
     })
+ 
   }
 
   logout() {

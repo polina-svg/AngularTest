@@ -1,46 +1,43 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import { UUID } from 'angular2-uuid';
-import {Observable} from "rxjs";
-import {PostUser, User, UsersModel} from "../../shared/models/users.model";
+import { HttpClient } from '@angular/common/http';
+
+import { forkJoin, Observable } from 'rxjs';
+import { PostUser, User, UsersModel } from '../../shared/models/users.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HttpService {
   private url = 'http://localhost:3000';
+  private header = {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
   constructor(private http: HttpClient) {}
 
-
-  getUserPrivateList(): Observable<any>{
-    return this.http.get(`${this.url}/privateUserDataList`)
+  getUserPrivateList(): Observable<any> {
+    return this.http.get(`${this.url}/privateUserDataList`);
   }
 
-  getUserList(): Observable<any>{
-    return this.http.get(`${this.url}/generalInformation`)
+  getUserList(): Observable<any> {
+    return this.http.get(`${this.url}/generalInformation`);
   }
 
-  getUserInfoById(id:string): Observable<any>{
-    return this.http.get(`${this.url}/generalInformation/?userId=${id}`)
+  getUserInfoById(id: string): Observable<any> {
+    return this.http.get(`${this.url}/generalInformation/?userId=${id}`);
   }
-
 
   postUsers(user: PostUser): Observable<any> {
-    const id = UUID.UUID();
-    const regRequest = this.http.post(`${this.url}/privateUserDataList`, {
-      ...user,
-      id
-    }, {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    regRequest.subscribe(() => {
-
-    })
-    return regRequest
+    return this.http.post(`${this.url}/privateUserDataList`,user,this.header)
   }
 
+  updateGeneralInformation(information: any, id?: string): Observable<any> {
+    if(id) {
+      return this.http.put(`${this.url}/generalInformation/${information.id}`, information)
+    }
+    return this.http.post(`${this.url}/generalInformation/`, information, this.header)
+  }
 
   update(user: UsersModel) {
     return this.http.put(`${this.url}}/users/${user.userId}`, user);
