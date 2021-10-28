@@ -6,6 +6,9 @@ import { UUID } from 'angular2-uuid';
 import {map} from "rxjs/operators";
 import {CurrentUser, registerFrom, UserConfirmedModel} from "../../shared/models/users.model";
 import {PrivateUserModel} from "../../shared/models/users.model";
+import {Toast, ToastrService} from "ngx-toastr";
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +18,8 @@ export class AuthService {
   public currentUser: Observable<CurrentUser | null>;
 
   constructor(private http: HttpService,
-              private router: Router) {
+              private router: Router,
+              private toastr: ToastrService) {
     this.currentUserSubject = new BehaviorSubject<CurrentUser | null>(JSON.parse(<string>localStorage.getItem('currentUser')));
     this.currentUser = this.currentUserSubject.asObservable();
   }
@@ -26,6 +30,8 @@ export class AuthService {
 
 
   login({login, password}: UserConfirmedModel) {
+
+
     this.http.getUserPrivateList().pipe(
       map((users: PrivateUserModel[]) => {
         return users.find((user) => user.login === login)
@@ -38,7 +44,9 @@ export class AuthService {
         return
       }
       if (user && user.password !== password) {
-        console.log('please correct password')
+
+          this.toastr.error('incorrect password!', 'please check password');
+
         return
       }
       if (user) {

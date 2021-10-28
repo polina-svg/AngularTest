@@ -1,5 +1,21 @@
 {
-  "privateUserDataList": [],
+  "privateUserDataList": [
+    {
+      "login": "pshib",
+      "password": "123",
+      "role": "user",
+      "id": "a5d1f031-b6e0-b434-5f1b-fd1994257513"
+    }
+  ],
   "generalInformation": [
+    {
+      "id": "a5d1f031-b6e0-b434-5f1b-fd1994257513",
+      "firstName": "polina",
+      "lastName": "shibanova",
+      "age": "",
+      "online": false,
+      "photo": "",
+      "university": []
+    }
   ]
 }

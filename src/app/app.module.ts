@@ -16,6 +16,7 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {MatSelectModule} from "@angular/material/select";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
     HttpClientModule,
     MatSelectModule,
     HttpClientModule,
+    ToastrModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
