@@ -6,6 +6,7 @@ import {SignINComponent} from "./core/components/sign-in/sign-in.component";
 import {SignUpComponent} from "./core/components/sign-up/sign-up.component";
 import {NotFoundComponent} from "./common/components/not-found/not-found.component";
 import {AuthGuard} from "./core/guards/auth.guard";
+import {DetailPageComponent} from "./modules/detail-page/detail-page/detail-page.component";
 
 const routes: Routes = [
   {
@@ -23,6 +24,11 @@ const routes: Routes = [
         canActivate: [AuthGuard]
       },
       {
+        path: 'detail-page',
+        loadChildren: (): Promise<any> => import('./modules/detail-page/detail-page.module').then((modules)=> modules.DetailPageModule)
+
+      },
+      {
         path: 'sign-in',
         component: SignINComponent
       },
@@ -34,6 +40,7 @@ const routes: Routes = [
         path: '**',
         component: NotFoundComponent
       },
+
     ]
   }
 ];
