@@ -58,6 +58,7 @@ export class AuthService {
 
   register(user: registerFrom) {
     const id = UUID.UUID();
+
     const privateUserData = {
       login: user.login,
       password: user.password,
@@ -65,9 +66,13 @@ export class AuthService {
       id
     }
     const defaultGeneralInfo = {
+      id,
       firstName: user.firstName,
       lastName: user.lastName,
-      id
+      age: '',
+      online: false,
+      photo: '',
+      university: []
     }
     forkJoin({
       postPrivate: this.http.postUsers(privateUserData),
@@ -76,7 +81,7 @@ export class AuthService {
       //тут тоже вывести что тип успешно зарегат чекрез тостер
       this.router.navigate(['']).then();
     })
- 
+
   }
 
   logout() {

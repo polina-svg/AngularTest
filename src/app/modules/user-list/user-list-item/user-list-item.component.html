@@ -1,6 +1,6 @@
 <mat-list-item role="listitem" class="item">
-  <p>{{item?.name | shortName : item?.name}}</p>
-  <button mat-raised-button color="warn" *ngIf="isAdmin" (click)="delete($event, item?.userId)">Delete</button>
+  <p>{{item?.firstName | shortName : item?.lastName}}</p>
+  <button mat-raised-button color="warn" *ngIf="isAdmin" (click)="delete($event, item?.id)">Delete</button>
 </mat-list-item>
 
 

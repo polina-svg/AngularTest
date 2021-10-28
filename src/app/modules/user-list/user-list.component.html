@@ -2,5 +2,5 @@
 
 
 <mat-list role="list">
-  <app-user-list-item *ngFor="let user of userList | async" [item]="user" (click)="openProfile(user.userId)" (isDelete)="updateUserList()"></app-user-list-item>
+  <app-user-list-item *ngFor="let user of userList | async" [item]="user" (click)="openProfile(user.id)" (isDelete)="updateUserList()"></app-user-list-item>
 </mat-list>

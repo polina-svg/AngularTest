@@ -33,11 +33,13 @@ export interface CurrentUser {
 }
 
 export interface UsersModel {
-  userId: string,
-  name: string,
-  age: string,
-  online: boolean,
-  university: {name: string, region: string}[]
+  id: string;
+  firstName: string;
+  lastName: string;
+  age: string;
+  online: boolean;
+  photo: string;
+  university: string[];
 }
 
 export type PostUser = Omit<registerFrom, 'confirmPassword'| 'lastName' | 'firstName'> & {id: string} ;

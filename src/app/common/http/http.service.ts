@@ -40,7 +40,7 @@ export class HttpService {
   }
 
   update(user: UsersModel) {
-    return this.http.put(`${this.url}}/users/${user.userId}`, user);
+    return this.http.put(`${this.url}}/users/${user.id}`, user);
   }
 
   delete(id: string) {

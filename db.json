@@ -1,17 +1,14 @@
 {
-  "privateUserDataList": [
-    {
-      "login": "soullnik",
-      "password": "12345",
-      "role": "user",
-      "id": "59b73220-2e6d-9e0e-627f-969cd2e49d1a"
-    }
-  ],
+  "privateUserDataList": [],
   "generalInformation": [
     {
-      "firstName": "soul",
-      "lastName": "nik",
-      "id": "59b73220-2e6d-9e0e-627f-969cd2e49d1a"
+      "id": "8558b380-0985-bf82-c1a7-891fc2d98bde",
+      "firstName": "Nord",
+      "lastName": "Nos",
+      "age": "",
+      "online": false,
+      "photo": "",
+      "university": []
     }
   ]
 }
