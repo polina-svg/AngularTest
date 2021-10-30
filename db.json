@@ -17,6 +17,24 @@
       "password": "12345",
       "role": "admin",
       "id": "07659ba4-0e18-c4de-afe7-bd1356b948f3"
+    },
+    {
+      "login": "er",
+      "password": "12",
+      "role": "user",
+      "id": "b34022f1-0220-b42c-7b1f-62c5eacd72c8"
+    },
+    {
+      "login": "2",
+      "password": "12",
+      "role": "user",
+      "id": "7f880621-a9e6-037d-fec3-3fe6c67a585e"
+    },
+    {
+      "login": "",
+      "password": "Aa12331235",
+      "role": "user",
+      "id": "f365cc7d-fc8e-dfb7-cea2-aed90b0057c4"
     }
   ],
   "generalInformation": [
@@ -36,6 +54,33 @@
       "id": "07659ba4-0e18-c4de-afe7-bd1356b948f3",
       "firstName": "Nikolay",
       "lastName": "Lozicki",
+      "age": "",
+      "online": false,
+      "photo": "",
+      "university": []
+    },
+    {
+      "id": "b34022f1-0220-b42c-7b1f-62c5eacd72c8",
+      "firstName": "4",
+      "lastName": "3",
+      "age": "",
+      "online": false,
+      "photo": "",
+      "university": []
+    },
+    {
+      "id": "7f880621-a9e6-037d-fec3-3fe6c67a585e",
+      "firstName": "2",
+      "lastName": "3",
+      "age": "",
+      "online": false,
+      "photo": "",
+      "university": []
+    },
+    {
+      "id": "f365cc7d-fc8e-dfb7-cea2-aed90b0057c4",
+      "firstName": "",
+      "lastName": "",
       "age": "",
       "online": false,
       "photo": "",

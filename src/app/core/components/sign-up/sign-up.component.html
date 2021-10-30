@@ -22,16 +22,23 @@
 
   <mat-form-field appearance="fill">
     <mat-label>{{ 'SIGN-UP.PASSWORD' | translate }}</mat-label>
-    <input matInput formControlName="password" required >
+    <input matInput formControlName="password" >
     <mat-icon matSuffix>vpn_key</mat-icon>
-    <mat-hint></mat-hint>
+    <mat-error *ngIf="signUpForm.controls['password'].errors?.minlength">
+      your password must have at least 8 symbols
+    </mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>{{ 'SIGN-UP.CONFIRM-PASSWORD' | translate }}</mat-label>
     <input matInput formControlName="confirmPassword" required >
     <mat-icon matSuffix>vpn_key</mat-icon>
-    <mat-hint></mat-hint>
+<!--    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">-->
+<!--      Please enter a valid email address-->
+<!--    </mat-error>-->
+    <mat-error *ngIf="signUpForm.controls['confirmPassword'].errors?.mismatch">
+      Eroor!!
+    </mat-error>
   </mat-form-field>
 
 
@@ -44,7 +51,7 @@
   </mat-form-field>
 
 
-  <button mat-raised-button color="primary" (click)="postForm()"> {{ 'SIGN-UP.SIGN-UP' | translate | titlecase}}</button>
+  <button [disabled]="!signUpForm.valid" mat-raised-button color="primary" (click)="postForm()"> {{ 'SIGN-UP.SIGN-UP' | translate | titlecase}}</button>
   <p>{{ 'SIGN-UP.TITLE' | translate }}</p>
   <a routerLink="/sign-in" routerLinkActive="active">{{ 'SIGN-UP.SIGN-IN' | translate }}</a>
 </div>

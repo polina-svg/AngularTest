@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../auth/auth.service";
 
 @Component({
@@ -16,7 +16,7 @@ export class SignINComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.fb.group({
       login: '',
-      password: ''
+      password: ['']
     })
   }
 
