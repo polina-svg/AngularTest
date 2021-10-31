@@ -15,7 +15,7 @@ export class SignUpComponent implements OnInit, AfterViewInit {
     password: ['', [Validators.minLength(8), this.passwordValidator]],
     confirmPassword: ['', [this.passwordConfirmed.bind(this)]],
     role: ''
-  }, [this.passwordConfirmed]);
+  });
 
   constructor(private fb: FormBuilder, private authService: AuthService) {
   }

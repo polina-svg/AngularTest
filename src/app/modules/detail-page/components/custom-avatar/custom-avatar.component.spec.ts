@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OverviewUsersComponent } from './overview-users.component';
+import { CustomAvatarComponent } from './custom-avatar.component';
 
-describe('OverviewUsersComponent', () => {
-  let component: OverviewUsersComponent;
-  let fixture: ComponentFixture<OverviewUsersComponent>;
+describe('CustomAvatarComponent', () => {
+  let component: CustomAvatarComponent;
+  let fixture: ComponentFixture<CustomAvatarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OverviewUsersComponent ]
+      declarations: [ CustomAvatarComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OverviewUsersComponent);
+    fixture = TestBed.createComponent(CustomAvatarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

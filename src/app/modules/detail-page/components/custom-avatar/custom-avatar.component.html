@@ -1,0 +1,9 @@
+<div class="container">
+  <img [src]="imgSrc" alt="avatar" class="avatar">
+  <div class="input__wrapper">
+    <input name="file" type="file" id="input__file" class="input input__file" multiple (change)="handleUpload($event)">
+    <label for="input__file" class="input__file-button">
+      <span class="input__file-button-text">Выберите файл</span>
+    </label>
+  </div>
+</div>

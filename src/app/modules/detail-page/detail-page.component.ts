@@ -86,4 +86,8 @@ export class DetailPageComponent implements OnInit, OnDestroy {
     })
     this.routeSub.add(subPost)
   }
+
+  recordAvatar(value: string){
+    this.userInfo.controls.photo.setValue(value)
+  }
 }

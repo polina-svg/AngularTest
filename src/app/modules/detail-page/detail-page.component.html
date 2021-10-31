@@ -1,4 +1,8 @@
 
+<app-custom-avatar (recordAvatar)="recordAvatar($event)" [userAvatar]="userInfo.controls['photo'].value" ></app-custom-avatar>
+
+
+
 <div [formGroup]="userInfo" class="userInfo">
   <div [ngStyle]="{display: 'flex'}">
     <span>Status: </span> <div class="online" [appOnlineStatus]="online"></div>
