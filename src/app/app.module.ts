@@ -12,11 +12,15 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
 import { NotFoundComponent } from './common/components/not-found/not-found.component';
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from "@angular/common/http";
 import {MatSelectModule} from "@angular/material/select";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import { ToastrModule } from 'ngx-toastr';
+import { LoaderComponent } from './common/components/loader/loader.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {LoaderService} from "./common/services/loader.service";
+import {LoaderInterceptor} from "./common/interseptors/interceptor.service";
 
 @NgModule({
   declarations: [
@@ -24,6 +28,7 @@ import { ToastrModule } from 'ngx-toastr';
     SignINComponent,
     SignUpComponent,
     NotFoundComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,9 +49,13 @@ import { ToastrModule } from 'ngx-toastr';
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    MatProgressSpinnerModule
   ],
-  providers: [],
+  providers: [
+    LoaderService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
