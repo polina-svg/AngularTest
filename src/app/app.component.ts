@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {LoaderService} from "./common/services/loader.service";
 
 
 @Component({
@@ -7,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'taskProject';
+  loading: boolean | undefined;
+
+  constructor(private loaderService: LoaderService) {
+    this.loaderService.isLoading.subscribe((v) => {
+      this.loading = v;
+    });
+  }
+
+
+
 }

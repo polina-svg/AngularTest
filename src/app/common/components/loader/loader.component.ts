@@ -7,15 +7,9 @@ import {LoaderService} from "../../services/loader.service";
   styleUrls: ['./loader.component.scss']
 })
 export class LoaderComponent implements OnInit {
+  constructor() {
 
-  loading: boolean | undefined;
 
-  constructor(private loaderService: LoaderService) {
-
-    this.loaderService.isLoading.subscribe((v) => {
-      console.log(v);
-      this.loading = v;
-    });
 
   }
 
