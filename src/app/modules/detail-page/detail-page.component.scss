@@ -2,53 +2,62 @@
   display: flex;
   gap: 60px;
   margin: 0 auto;
-}
-.userInfo{
-  display: flex;
-  flex-direction: column;
-
-  .status{
-    display: flex;
-    gap: 10px;
-  }
-  div{
-    .online {
-      border-radius: 50%;
-      width: 20px;
-      height: 20px;
-    }
-  }
-  .fields{
+  .userInfo{
     display: flex;
     flex-direction: column;
-    .title{
-      font-weight: bold;
+
+    ul {
+      padding: 0;
+      margin: 10px 0 ;
     }
-    span{
-      padding: 10px;
-      font-size: 40px;
+
+    .status{
+      display: flex;
+      gap: 10px;
     }
-    h4{
-      font-size: 45px;
-      padding: 10px;
-      margin: 0;
+    div{
+      .online {
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+      }
     }
-    li{
-      list-style: none;
+    .fields{
+      display: flex;
+      flex-direction: column;
+      .title{
+        font-weight: bold;
+      }
+      span{
+        padding: 10px;
+        font-size: 40px;
+      }
+      h4{
+        font-size: 45px;
+        padding: 10px;
+        margin: 0;
+      }
+      li{
+        list-style: none;
+      }
+
+    }
+    .input-container{
+      display: flex;
+      gap: 5px;
+    }
+    .post-btn{
+      width: 30px;
+      margin-top: 30px;
+    }
+
+    .add-btn{
+      height: 30px;
     }
 
   }
-  .input-container{
-    display: flex;
-    gap: 5px;
+  @media only screen and (max-width: 768px){
+    flex-direction: column;
   }
-  .post-btn{
-    width: 30px;
-    margin-top: 30px;
-  }
-
-  .add-btn{
-    height: 30px;
-  }
-
 }
+
