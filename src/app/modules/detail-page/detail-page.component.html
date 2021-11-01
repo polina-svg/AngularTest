@@ -4,7 +4,7 @@
 
 
 <div [formGroup]="userInfo" class="userInfo">
-  <div [ngStyle]="{display: 'flex'}">
+  <div [ngStyle]="{display: 'flex'}" class="status">
     <span>Status: </span> <div class="online" [appOnlineStatus]="online"></div>
   </div>
 
@@ -34,13 +34,17 @@
     <ul formArrayName="university">
       <li *ngFor="let user of formArr.controls; index as idx">
         <span>{{user.value}}</span>
-        <button type="button" (click)="deleteUniversity(idx)" *ngIf="!isAdmin">Delete</button>
+        <button mat-raised-button color="warn" (click)="deleteUniversity(idx)" *ngIf="!isAdmin">delete</button>
+<!--        <button type="button" (click)="deleteUniversity(idx)" *ngIf="!isAdmin">Delete</button>-->
       </li>
     </ul>
-    <div *ngIf="!isAdmin">
+    <div *ngIf="!isAdmin" class="input-container">
       <input  type="text" [formControl]="addControl">
-      <button type="button" (click)="addUniv()">add</button>
+      <button mat-raised-button color="primary" (click)="addUniv()" class="add-btn">add</button>
+<!--    <button type="button" (click)="addUniv()">add</button>&ndash;&gt;-->
     </div>
   </div>
-  <button type="button" (click)="postInfo()" *ngIf="!isAdmin">post info</button>
+<!--  <button (click)="postInfo()" *ngIf="!isAdmin">post info</button>-->
+  <button mat-raised-button color="primary" (click)="postInfo()" *ngIf="!isAdmin"  class="post-btn">post</button>
+
 </div>

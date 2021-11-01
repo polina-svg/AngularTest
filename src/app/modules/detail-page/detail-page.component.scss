@@ -1,10 +1,16 @@
 :host {
   display: flex;
-  gap: 10px;
+  gap: 60px;
+  margin: 0 auto;
 }
 .userInfo{
   display: flex;
   flex-direction: column;
+
+  .status{
+    display: flex;
+    gap: 10px;
+  }
   div{
     .online {
       border-radius: 50%;
@@ -31,6 +37,18 @@
       list-style: none;
     }
 
+  }
+  .input-container{
+    display: flex;
+    gap: 5px;
+  }
+  .post-btn{
+    width: 30px;
+    margin-top: 30px;
+  }
+
+  .add-btn{
+    height: 30px;
   }
 
 }

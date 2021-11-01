@@ -6,6 +6,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {TranslateModule} from "@ngx-translate/core";
 import {OnlineStatusDirective} from "./directives/online-status.directive";
 import { CustomAvatarComponent } from './components/custom-avatar/custom-avatar.component';
+import {MatButtonModule} from "@angular/material/button";
 
 
 
@@ -21,6 +22,7 @@ import { CustomAvatarComponent } from './components/custom-avatar/custom-avatar.
     ReactiveFormsModule,
     TranslateModule,
     FormsModule,
+    MatButtonModule,
   ]
 })
 export class DetailPageModule { }
